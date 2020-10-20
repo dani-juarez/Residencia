@@ -7,7 +7,6 @@
 		<div class="jumbotron">
 			<div class="container">
 				<center><h1>Bienvenido!</h1></center>
-				<center><p>Sistema Planeación.</p></center>
 				<p>
 				<center><img src="../imagenes/fondo-itao-tecnm.png" width="300" height="200"></center>
 				</p>

@@ -9,10 +9,7 @@ if (isset($_SESSION["usuario"])) {
 }
 ?>
 <?php include 'partials/menu.php';?>
-<div class="container">
-	<div class="starter-template">
-		<div class="jumbotron">
-			<div class="container text-center">
+			<div class="welcome text-center">
 				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h1>
 				<p><span class="label label-info"><?php echo $_SESSION["usuario"]["privilegio"] == 1 ? 'Administrador' : 'Usuario'; ?></span></p>
 				

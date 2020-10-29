@@ -313,7 +313,7 @@ header nav ul li .caret {
 		font-size: 40px;
 	}
  
-	header nav {
+	header nav {                                    
 		width: 80%;
 		height: calc(100% - 80px);
 		position: fixed;

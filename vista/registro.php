@@ -41,6 +41,6 @@
 		</div>
 	</div>
 
-</div><!-- /.container -->
+</div>
 
 <?php include 'partials/footer.php';?>

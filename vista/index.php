@@ -4,12 +4,30 @@
 <div class="container">
 
 	<div class="starter-template">
-		<div class="jumbotron">
-			<div class="container">
-				<center><h1>Bienvenido!</h1></center>
-				<p>
-				<center><img src="../imagenes/fondo-itao-tecnm.png" width="300" height="200"></center>
-				</p>
+		<br>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<form id="loginForm" action="validarCode.php" method="POST" role="form">
+							<center><legend>Iniciar sesión</legend></center>
+
+							<div class="form-group">
+								<label for="usuario">Usuario</label>
+								<input type="text" name="txtUsuario" class="form-control" id="usuario" autofocus required placeholder="usuario">
+							</div>
+
+							<div class="form-group">
+								<label for="password">Contraseña</label>
+								<input type="password" name="txtPassword" class="form-control" required id="password" placeholder="****">
+							</div>
+
+							<button type="submit" class="btn btn-success">Ingresar</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

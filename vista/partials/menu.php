@@ -14,10 +14,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class=""><a href="index.php"><span class="icon-home"></span> Principal</a></li>
             <?php if (!isset($_SESSION["usuario"])) {?>
-            <li><a href="login.php"><span class="icon-enter"></span> Inicio Sesión</a></li>
-            <li><a href="registro.php">Registro</a></li>
+            <li><a href="index.php"><span class="icon-enter"></span> Inicio Sesión</a></li>
             <?php } else {
     ?>
               <?php if ($_SESSION["usuario"]["privilegio"] == 1) {?>

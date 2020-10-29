@@ -11,9 +11,9 @@
 <div class="row">
 	<div class="col-sm-8"></div>
 	<div class="col-sm-4">
-		<label>Buscador</label>
+		<label>Buscar PDI</label>
 		<select id="buscadorvivo" class="form-control input-sm">
-			<option value="0">Seleciona.</option>
+			<option value="0">Selecione.</option>
 			<?php
 				while($ver=mysqli_fetch_row($result)): 
 			 ?>

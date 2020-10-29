@@ -119,7 +119,7 @@ function eliminarDatos(id){
 
 		$.ajax({
 			type:"POST",
-			url:"php/eliminarDatos.php",
+			url:"../php/eliminarDatos.php",
 			data:cadena,
 			success:function(r){
 				if(r==1){

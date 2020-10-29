@@ -5,7 +5,7 @@ if (isset($_SESSION["usuario"])) {
         header("location:usuario.php");
     }
 } else {
-    header("location:login.php");
+    header("location:index.php");
 }
 ?>
 <?php include 'partials/menu.php';?>
@@ -32,7 +32,7 @@ if (isset($_SESSION["usuario"])) {
     <div class="content"> </div>
     <div class="panel-panel-primary">
       <div class="panel-heading">
-      <center><h2 class="panel-title"> Cargar Archivos </h2></center>
+      <center><h2 class="panel-title"> Cargar Indicadores </h2></center>
       </div>
       <div class="panel-body">
         <div class="col-lg-6">
@@ -42,7 +42,7 @@ if (isset($_SESSION["usuario"])) {
                 <input required="" type="file" name="file" id="exampleInputFile">
               </label>     
 </div>
-          <button class="btn btn-primary" type="submit">Subir Archivos</button>
+          <button class="btn btn-primary" type="submit">Subir Indicadores</button>
           </form>
         </div>
         <div class="col-lg-6"> </div>
@@ -52,7 +52,7 @@ if (isset($_SESSION["usuario"])) {
 <!--tabla-->
     <div class="panel-panel-primary">
       <div class="panel-heading">
-        <center><h3 class="panel-title">Archivos Disponibles</h3></center>
+        <center><h3 class="panel-title">Indicadores Disponibles</h3></center>
       </div>
       <div class="panel-body">
    

@@ -59,7 +59,7 @@ if (isset($_SESSION["usuario"])) {
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 	<div class="contenedor">

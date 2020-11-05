@@ -28,6 +28,8 @@
 				<td><center>Indicador Interno (ITs)</center></td>
 				<td><center>Medio de Verificación</center></td>
 				<td><center>Área Responsable</center></td>
+				<td><center>Editar</center></td>
+				<td><center>Eliminar</center></td>
 				
 			</tr>
 

@@ -15,7 +15,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <?php if (!isset($_SESSION["usuario"])) {?>
-            <li><a href="index.php"><span class="icon-enter"></span> Inicio Sesión</a></li>
             <?php } else {
     ?>
               <?php if ($_SESSION["usuario"]["privilegio"] == 1) {?>
@@ -25,6 +24,7 @@
               <li><a href="cerrar-sesion.php"><span class="icon-exit"></span> Cerrar sesión</a></li>
               <?php } else {?>
               <li><a href="usuario.php"><span class="icon-user"></span> Usuario</a></li>
+              <li><a href="pdiu.php"><span class="icon-pencil"></span> PDI</a></li>
               <li><a href="reportesu.php"><span class="icon-cloud-upload"> Subir Indicadores</a></li>
               <li><a href="cerrar-sesion.php"><span class="icon-exit"></span> Cerrar sesión</a></li>
             <?php }

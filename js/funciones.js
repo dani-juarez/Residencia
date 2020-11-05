@@ -18,12 +18,12 @@ function agregardatos(eje,objetivo,numero_linea_accion,linea_accion,numero_proye
 
 	$.ajax({
 		type:"POST",
-		url:"php/agregarDatos.php",
+		url:"../php/agregarDatos.php",
 		data:cadena,
 		success:function(r){
 			if(r==1){
-				$('#tabla').load('componentes/tabla.php');
-				 $('#buscador').load('componentes/buscador.php');
+				$('#tabla').load('../componentes/tabla.php');
+				 $('#buscador').load('../componentes/buscador.php');
 				alertify.success("Agregado con Exito ✓.");
 			}else{
 				alertify.error("Fallo al Agregar X.");
@@ -92,12 +92,12 @@ function actualizaDatos(){
 
 	$.ajax({
 		type:"POST",
-		url:"php/actualizaDatos.php",
+		url:"../php/actualizaDatos.php",
 		data:cadena,
 		success:function(r){
 			
 			if(r==1){
-				$('#tabla').load('componentes/tabla.php');
+				$('#tabla').load('../componentes/tabla.php');
 				alertify.success("Actualizado con Exito ✓.");
 			}else{
 				alertify.error("Fallo al Actualizar X.");
@@ -123,7 +123,7 @@ function eliminarDatos(id){
 			data:cadena,
 			success:function(r){
 				if(r==1){
-					$('#tabla').load('componentes/tabla.php');
+					$('#tabla').load('../componentes/tabla.php');
 					alertify.success("Eliminado con Exito ✓.");
 				}else{
 					alertify.error("Fallo al Eliminar X.");

@@ -24,7 +24,7 @@
               <li><a href="cerrar-sesion.php"><span class="icon-exit"></span> Cerrar sesión</a></li>
               <?php } else {?>
               <li><a href="usuario.php"><span class="icon-user"></span> Usuario</a></li>
-              <li><a href="pdiu.php"><span class="icon-pencil"></span> PDI</a></li>
+              <li><a href="pdi.php"><span class="icon-pencil"></span> PDI</a></li>
               <li><a href="reportesu.php"><span class="icon-cloud-upload"> Subir Indicadores</a></li>
               <li><a href="cerrar-sesion.php"><span class="icon-exit"></span> Cerrar sesión</a></li>
             <?php }

@@ -459,7 +459,7 @@ h1{
     background-color: #1B396A;
 }
 
-/*Usuarioa*/
+/*Usuarioa y PDI*/
 
 *{
     padding: 0;
@@ -477,8 +477,8 @@ a{
     text-decoration: none;
 }
 .contenedor{
-    width: 80%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 2000px;
     margin: 30px auto;
     overflow: hidden;
 

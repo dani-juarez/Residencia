@@ -13,13 +13,12 @@ if (isset($_SESSION["usuario"])) {
 	<div class="starter-template">
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h1>
+				<h2><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h2>
 				<p><span class="label label-info"><?php echo $_SESSION["usuario"]["privilegio"] == 1 ? 'Administrador' : 'Usuario'; ?></span></p>
-				
 			</div>
 		</div>
 	</div>
-</div><!-- /.container -->
+</div>
 <?php include 'partials/footer.php';?>
 
 <!doctype html>
@@ -37,11 +36,11 @@ if (isset($_SESSION["usuario"])) {
       <div class="panel-body">
         <div class="col-lg-6">
           <form method="POST" action="subir_archivo.php" enctype="multipart/form-data">
-<div class="form-group">
+       <div class="form-group">
               <label class="btn btn-primary" for="my-file-selector">
                 <input required="" type="file" name="file" id="exampleInputFile">
               </label>     
-</div>
+       </div>
           <button class="btn btn-primary" type="submit">Subir Indicadores</button>
           </form>
         </div>
@@ -87,7 +86,6 @@ for ($i=2; $i<count($archivos); $i++)
 </table>
 </div>
 </div>
-<!-- Fin tabla--> 
   </div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>

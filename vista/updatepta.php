@@ -13,7 +13,7 @@ if (isset($_SESSION["usuario"])) {
 	<div class="starter-template">
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h1>
+				<h2><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h2>
 				<p><span class="label label-info"><?php echo $_SESSION["usuario"]["privilegio"] == 1 ? 'Administrador' : 'Usuario'; ?></span></p>
 				
 			</div>
@@ -49,7 +49,7 @@ if (isset($_SESSION["usuario"])) {
 		$indicador=$_POST['indicador'];
 		$unidad_medida=$_POST['unidad_medida'];
 		$numero_accion=$_POST['numero_accion'];
-		$accion_comprometida=$_POST['accion_comprmetida'];
+		$accion_comprometida=$_POST['accion_comprometida'];
 		$meta=$_POST['meta'];
 		$indicador_interno=$_POST['indicador_interno'];
 		$medio_verificacion=$_POST['medio_verificacion'];
@@ -92,7 +92,7 @@ if (isset($_SESSION["usuario"])) {
 					':area_responsable' =>$area_responsable,
 					':id' =>$id
 				));
-				header('Location: pdi.php');
+				header('Location: pta.php');
 			}
 		}
 
@@ -101,7 +101,6 @@ if (isset($_SESSION["usuario"])) {
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Editar PDI</title>
 	<link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
@@ -137,7 +136,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="area_responsable" placeholder="Área Responsable" value="<?php if($resultado) echo $resultado['area_responsable']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="pdi.php" class="btn btn__danger">Cancelar</a>
+				<a href="pta.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

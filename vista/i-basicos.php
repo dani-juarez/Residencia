@@ -23,11 +23,10 @@ if (isset($_SESSION["usuario"])) {
 
 <?php include 'partials/footer.php';?>
 
-
 <?php
 	include_once 'conexion.php';
 
-	$sentencia_select=$con->prepare('SELECT *FROM usuarios ORDER BY id ASC');
+	$sentencia_select=$con->prepare('SELECT *FROM responsables ORDER BY id ASC');
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
@@ -35,7 +34,7 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
 		$select_buscar=$con->prepare('
-			SELECT *FROM usuarios WHERE nombre LIKE :campo OR usuario LIKE :campo;'
+			SELECT *FROM usuarios WHERE responsable LIKE :campo;'
 		);
 
 		$select_buscar->execute(array(
@@ -49,48 +48,55 @@ if (isset($_SESSION["usuario"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../CSS/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
+    <!-- Menu Lateral-->
+    <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value="">
+    <label for="abrir-cerrar">&#9776; <span class="abrir">Abrir</span><span class="cerrar">Cerrar</span> </label>
+    <center><h2>RESPONSABLES DE LLENADO</h2></center>
+    <div id="sidebar" class="sidebar">
+        <ul class="menu">
+            <li><a href="pta.php"><span class="icon-user-tie"></span> Matricula</a></li>
+            <li><a href="#">Opción 2</a></li>
+            <li><a href="#">Opción 3</a></li>
+            <li><a href="#">Opción 4</a></li>
+            <li><a href="#">Opción 5</a></li>
+            <li><a href="#">Opción 6</a></li>
+        </ul>
+    </div>
 
-	<div class="contenedor">
-		<h2>USUARIOS</h2>
+    <!-- Tabla Responsables -->
+    <div class="contenedor">
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
-				<input type="text" name="buscar" placeholder="Buscar Nombre o Usuario" 
+				<input type="text" name="buscar" placeholder="Buscar Responsable" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="insert.php" class="btn btn__nuevo">Nuevo Usuario</a>
+				<a href="insertres.php" class="btn btn__nuevo">Nuevo Responsable</a>
 			</form>
 		</div>
 		<table>
 			<tr class="head">
-				<td>Id</td>
-				<td>Nombre</td>
-				<td>Usuario</td>
-				<td>Correo</td>
-				<td>Contraseña</td>
-				<td>Privilegio</td>
+        <td>Id</td>
+				<td>Responsable</td>
+				<td>Departamento</td>
 				<td colspan="2">Acción</td>
 			</tr>
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['id']; ?></td>
-					<td><?php echo $fila['nombre']; ?></td>
-					<td><?php echo $fila['usuario']; ?></td>
-					<td><?php echo $fila['email']; ?></td>
-					<td><?php echo $fila['password']; ?></td>
-					<td><?php echo $fila['privilegio']; ?></td>
-					<td><a href="update.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					<td><?php echo $fila['responsable']; ?></td>
+					<td><?php echo $fila['departamento']; ?></td>
+					<td><a href="updateres.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="deleteres.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
 		</table>
 	</div>
 </body>
-</html>
+</html> 

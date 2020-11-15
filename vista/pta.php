@@ -13,7 +13,7 @@ if (isset($_SESSION["usuario"])) {
 	<div class="starter-template">
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h1>
+				<h2><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h2>
 				<p><span class="label label-info"><?php echo $_SESSION["usuario"]["privilegio"] == 1 ? 'Administrador' : 'Usuario'; ?></span></p>
 				
 			</div>
@@ -55,6 +55,36 @@ if (isset($_SESSION["usuario"])) {
 	<link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
+
+<form action="files.php" method="post" enctype="multipart/form-data" id="filesForm">
+            <div class="col-md-4 offset-md-4">
+                <input class="form-control" type="file" name="fileContacts" >
+                <button type="button" onclick="uploadContacts()" class="btn btn-primary form-control" >Cargar CSV</button>
+            </div>
+        </form>
+
+<script type="text/javascript">
+
+    function uploadContacts()
+    {
+
+        var Form = new FormData($('#filesForm')[0]);
+        $.ajax({
+
+            url: "import.php",
+            type: "post",
+            data : Form,
+            processData: false,
+            contentType: false,
+            success: function(data)
+            {
+                alert('Registros Agregados!');
+            }
+        });
+    }
+
+</script>
+
 	<div class="contenedor">
 		<h2>MODULO PDI TECNM</h2>
 		<div class="barra__buscador">
@@ -62,7 +92,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Area Responsable" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="insertpdi.php" class="btn btn__nuevo">Nuevo PDI</a>
+				<a href="insertpta.php" class="btn btn__nuevo">Nuevo PDI</a>
 			</form>
 		</div>
 		<table>
@@ -99,12 +129,13 @@ if (isset($_SESSION["usuario"])) {
 					<td><?php echo $fila['indicador_interno']; ?></td>
 					<td><?php echo $fila['medio_verificacion']; ?></td>
 					<td><?php echo $fila['area_responsable']; ?></td>
-					<td><a href="updatepdi.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="deletepdi.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					<td><a href="updatepta.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="deletepta.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
 		</table>
 	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 </body>
 </html>

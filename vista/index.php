@@ -7,6 +7,8 @@
 		<br>
 		<br>
 		<br>
+		<br>
+		<br>
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
@@ -16,12 +18,12 @@
 
 							<div class="form-group">
 								<label for="usuario">Usuario</label>
-								<input type="text" name="txtUsuario" class="form-control" id="usuario" autofocus required placeholder="usuario">
+								<input type="text" name="txtUsuario" class="form-control" id="usuario" autofocus required placeholder="USUARIO">
 							</div>
 
 							<div class="form-group">
 								<label for="password">Contraseña</label>
-								<input type="password" name="txtPassword" class="form-control" required id="password" placeholder="****">
+								<input type="password" name="txtPassword" class="form-control" required id="password" placeholder="CONTRASEÑA">
 							</div>
 
 							<button type="submit" class="btn btn-success">Ingresar</button>

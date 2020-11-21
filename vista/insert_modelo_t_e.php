@@ -31,7 +31,6 @@ if (isset($_SESSION["usuario"])) {
 		$resultado=$_POST['resultado'];
 
 		if(!empty($indicador) && !empty($resultado) ){
-			}else{
 				$consulta_insert=$con->prepare('INSERT INTO modelo_talento_emprendedor (indicador,resultado) VALUES (:indicador,:resultado)');
 				$consulta_insert->execute(array(
 					':indicador' =>$indicador,

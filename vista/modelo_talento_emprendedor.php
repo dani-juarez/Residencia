@@ -53,7 +53,7 @@ if (isset($_SESSION["usuario"])) {
 </head>
 <body>
 <h2>MODELO TALENTO EMPRENDEDOR</h2>
-<!-- Tabla matricula-->
+<!-- Tabla modelo-->
 <div class="contenedor">
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">

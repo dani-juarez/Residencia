@@ -277,7 +277,7 @@ label[for="abrir-cerrar"] {
     background-color:#1B396A;
     color:#fff;
     display:inline-block;
-    width:100%;
+    width:15%;
 
 }
 
@@ -290,15 +290,15 @@ label[for="abrir-cerrar"] {
 }
 
 #contenido {
-    margin-left:0;
+    margin-left:0%;
 }
 
 input#abrir-cerrar:checked ~ #sidebar {
-    width:300px;
+    width:250px;
 }
 
 input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:checked ~ #contenido {
-    margin-left:300px;
+    margin-left:250px;
     transition: margin-left .4s;
 }
 
@@ -315,7 +315,7 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"] .abrir {
     position: fixed;
     height: 100%;
     width: 0;
-    top: 29%;
+    top: 4%;
     left: 0;
     z-index: 1;
     background-color: #1B396A;

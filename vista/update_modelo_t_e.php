@@ -29,35 +29,35 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_GET['id'])){
 		$id=(int) $_GET['id'];
 
-		$buscar_id=$con->prepare('SELECT * FROM responsables WHERE id=:id LIMIT 1');
+		$buscar_id=$con->prepare('SELECT * FROM modelo_talento_emprendedor WHERE id=:id LIMIT 1');
 		$buscar_id->execute(array(
 			':id'=>$id
 		));
 		$resultado=$buscar_id->fetch();
 	}else{
-		header('Location: ind_basicos.php');
+		header('Location: modelo_talento_emprendedor.php');
 	}
 
 
 	if(isset($_POST['guardar'])){
-		$responsable=$_POST['responsable'];
-		$departamento=$_POST['departamento'];
+		$indicador=$_POST['indicador'];
+		$resultado=$_POST['resultado'];
 		$id=(int) $_GET['id'];
 
-		if(!empty($responsable) && !empty($departamento)){
-				$consulta_update=$con->prepare(' UPDATE responsables SET  
-					responsable=:responsable,
-					departamento=:departamento
+		if(!empty($indicador) && !empty($resultado)){    
+				$consulta_update=$con->prepare(' UPDATE modelo_talento_emprendedor SET  
+					indicador=:indicador,
+					resultado=:resultado
 					WHERE id=:id;'
 				);
 				$consulta_update->execute(array(
-					':responsable' =>$responsable,
-					':departamento' =>$departamento,
+					':indicador' =>$indicador,
+					':resultado' =>$resultado,
 					':id' =>$id
 				));
-				header('Location: ind_basicos.php');
-			}
-			}
+				header('Location: modelo_talento_emprendedor.php');
+            }
+            }
 ?>
 
 <!DOCTYPE html>
@@ -68,14 +68,14 @@ if (isset($_SESSION["usuario"])) {
 </head>
 <body>
 	<div class="contenedor">
-		<h2>ACTUALIZAR RESPONSABLE</h2>
+		<h2>ACTUALIZAR MODELO TALENTO EMPRENDEDOR</h2>
 		<form action="" method="post">
 			<div class="form-group">
-				<input type="text" name="responsable" placeholder="RESPONSABLE" value="<?php if($resultado) echo $resultado['responsable']; ?>" class="input__text">
-				<input type="text" name="departamento" placeholder="DEPARTAMENTO" value="<?php if($resultado) echo $resultado['departamento']; ?>" class="input__text">
+				<input type="text" name="indicador" placeholder="INDICADOR" value="<?php if($resultado) echo $resultado['indicador']; ?>" class="input__text">
+				<input type="text" name="resultado" placeholder="RESULTADO" value="<?php if($resultado) echo $resultado['resultado']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="ind_basicos.php" class="btn btn__danger">Cancelar</a>
+				<a href="modelo_talento_emprendedor.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

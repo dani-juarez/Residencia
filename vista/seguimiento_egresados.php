@@ -182,7 +182,7 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['noo2']; ?></td>
                     <td><?php echo $fila['parcial2']; ?></td>
 					<td><a href="update_seguimiento_egresados2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="delete_seguimiento-egresados2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					<td><a href="delete_seguimiento_egresados2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 

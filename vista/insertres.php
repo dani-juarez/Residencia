@@ -30,16 +30,15 @@ if (isset($_SESSION["usuario"])) {
 		$responsable=$_POST['responsable'];
 		$departamento=$_POST['departamento'];
 
-		if(!empty($responsable) && !empty($departamento) ){
-			}else{
-				$consulta_insert=$con->prepare('INSERT INTO responsables (responsable,departamento) VALUES (:responsable,:departamento)');
+		if(!empty($responsable) && !empty($departamento) )
+				$consulta_insert=$con->prepare('INSERT INTO responsables (responsable,departamento) VALUES(:responsable,:departamento)');
 				$consulta_insert->execute(array(
 					':responsable' =>$responsable,
 					':departamento' =>$departamento
 				));
 				header('Location: ind_basicos.php');
 			}
-		}
+		
 ?>
 
 <!DOCTYPE html>

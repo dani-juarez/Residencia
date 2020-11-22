@@ -30,15 +30,15 @@ if (isset($_SESSION["usuario"])) {
 		$indicador=$_POST['indicador'];
 		$resultado=$_POST['resultado'];
 
-		if(!empty($indicador) && !empty($resultado) ){
-				$consulta_insert=$con->prepare('INSERT INTO modelo_talento_emprendedor (indicador,resultado) VALUES (:indicador,:resultado)');
+		if(!empty($indicador) && !empty($resultado) )
+				$consulta_insert=$con->prepare('INSERT INTO modelo_talento_emprendedor (indicador,resultado) VALUES(:indicador,:resultado)');
 				$consulta_insert->execute(array(
 					':indicador' =>$indicador,
-					':resultado' =>$resultado
+					':resultado' =>$resultado,
 				));
 				header('Location: modelo_talento_emprendedor.php');
 			}
-		}
+
 ?>
 
 <!DOCTYPE html>

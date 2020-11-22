@@ -54,6 +54,7 @@ if (isset($_SESSION["usuario"])) {
 		$id=(int) $_GET['id'];
 
 		if(!empty($programa2) && !empty($nivel2) && !empty($educativo2) && !empty($primario2) && !empty($secundario2) && !empty($terciario2) && !empty($publica2) && !empty($privada2) && !empty($si2) && !empty($noo2) && !empty($parcial2) ){
+		}else{
 				$consulta_update=$con->prepare(' UPDATE seguimiento_egresados2 SET  
 					programa2=:programa2,
 					nivel2=:nivel2,

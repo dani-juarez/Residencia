@@ -23,7 +23,7 @@
 			<li><a href="#"><span class="icon-pencil"></span>HARDWARE</a></li>
 			<li><a href="#"><span class="icon-pencil"></span>CENTRO DE COMPUTO</a></li>
 			<li><a href="#"><span class="icon-pencil"></span>SERVICIO SOCIAL</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>CONVENIOS DE VINCULACION</a></li>
+			<li><a href="convenios_vinculacion.php"><span class="icon-pencil"></span>CONVENIOS DE VINCULACION</a></li>
 			<li><a href="seguimiento_egresados.php"><span class="icon-pencil"></span>SEGUIMIENTO DE EGRESADOS</a></li>
 			<li><a href="modelo_talento_emprendedor.php"><span class="icon-pencil"></span>MODELO TALENTO EMPRENDEDOR</a></li>
         </ul>

@@ -1,4 +1,4 @@
-<?php include 'partials/menu_lateral';?>
+<?php include 'partials/menu_lateral.php';?>
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {

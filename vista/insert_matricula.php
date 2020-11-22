@@ -33,7 +33,7 @@ if (isset($_SESSION["usuario"])) {
         $hombre_reingreso=$_POST['hombre_reingreso'];
         $mujer_reingreso=$_POST['mujer_reingreso'];
 
-		if(!empty($programa) && !empty($hombre_nuevo) && !empty($mujer_nuevo) && !empty($hombre_reingreso) && !empty($mujer_reingreso) )
+		if(!empty($programa) && !empty($hombre_nuevo) && !empty($mujer_nuevo) && !empty($hombre_reingreso) && !empty($mujer_reingreso) ){
 				$consulta_insert=$con->prepare('INSERT INTO matricula (programa,hombre_nuevo,mujer_nuevo,hombre_reingreso,mujer_reingreso) VALUES(:programa,:hombre_nuevo,:mujer_nuevo,:hombre_reingreso,:mujer_reingreso)');
 				$consulta_insert->execute(array(
 					':programa' =>$programa,
@@ -44,6 +44,7 @@ if (isset($_SESSION["usuario"])) {
 				));
 				header('Location: matricula.php');
 			}
+		}
 ?>
 
 <!DOCTYPE html>

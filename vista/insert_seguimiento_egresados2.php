@@ -39,7 +39,8 @@ if (isset($_SESSION["usuario"])) {
         $noo2=$_POST['noo2'];
         $parcial2=$_POST['parcial2'];
 
-		if(!empty($programa2) && !empty($nivel2) && !empty($educativo2) && !empty($primario2)&& !empty($secundario2) && !empty($terciario2) && !empty($publica2) && !empty($privada2) && !empty($si2) && !empty($noo2) && !empty($parcial2) ){
+		if(!empty($programa2) && !empty($nivel2) && !empty($educativo2) && !empty($primario2)&& !empty($secundario2) && !empty($terciario2) && !empty($publica2) && !empty($privada2) && !empty($si2) && !empty($noo2) && !empty($parcial2) ){ 
+			 }else{
 				$consulta_insert=$con->prepare('INSERT INTO seguimiento_egresados2 (programa2,nivel2,educativo2,primario2,secundario2,terciario2,publica2,privada2,si2,noo2,parcial2) VALUES (:programa2,:nivel2,:educativo2,:primario2,:secundario2,:terciario2,:publica2,:privada2,:si2,:noo2,:parcial2)');
 				$consulta_insert->execute(array(
 					':programa2' =>$programa2,
@@ -55,8 +56,9 @@ if (isset($_SESSION["usuario"])) {
                     ':parcial2' =>$parcial2
 				));
 				header('Location: seguimiento_egresados.php');
-            }
-        }
+			}
+		}
+        
 ?>
 
 <!DOCTYPE html>

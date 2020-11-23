@@ -100,10 +100,10 @@ if (isset($_SESSION["usuario"])) {
 				<tr >
 					<td><?php echo $fila['nombre_empresa']; ?></td>
 					<td><?php echo $fila['ubicacion']; ?></td>
-                    <td><?php echo $fila['año_creacion']; ?></td>
+                    <td><?php echo $fila['ano_creacion']; ?></td>
                     <td><?php echo $fila['sector']; ?></td>
                     <td><?php echo $fila['giro']; ?></td>
-                    <td><?php echo $fila['tamaño']; ?></td>
+                    <td><?php echo $fila['tamano']; ?></td>
                     <td><?php echo $fila['n_empleados']; ?></td>
                     <td><?php echo $fila['tipo']; ?></td>
                     <td><?php echo $fila['modalidad']; ?></td>
@@ -111,7 +111,7 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['area_conocimiento']; ?></td>
 					<td><?php echo $fila['inicio']; ?></td>
 					<td><?php echo $fila['termino']; ?></td>
-					<td><a href="#.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="update_convenios_vinculacion.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
 					<td><a href="delete_convenios_vinculacion.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>

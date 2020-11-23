@@ -29,10 +29,10 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_POST['guardar'])){
 		$nombre_empresa=$_POST['nombre_empresa'];
 		$ubicacion=$_POST['ubicacion'];
-		$año_creacion=$_POST['año_creacion'];
+		$ano_creacion=$_POST['ano_creacion'];
 		$sector=$_POST['sector'];
 		$giro=$_POST['giro'];
-		$tamaño=$_POST['tamaño'];
+		$tamano=$_POST['tamano'];
 		$n_empleados=$_POST['n_empleados'];
 		$tipo=$_POST['tipo'];
 		$modalidad=$_POST['modalidad'];
@@ -41,16 +41,16 @@ if (isset($_SESSION["usuario"])) {
 		$inicio=$_POST['inicio'];
 		$termino=$_POST['termino'];
 
-		if(!empty($nombre_empresa) && !empty($ubicacion) && !empty($año_creacion) && !empty($sector) && !empty($giro) && !empty($tamaño) && !empty($n_empleados) && !empty($tipo) && !empty($modalidad) && !empty($alcance) && !empty($area_conocimiento) && !empty($inicio) && !empty($termino) ){
+		if(!empty($nombre_empresa) && !empty($ubicacion) && !empty($ano_creacion) && !empty($sector) && !empty($giro) && !empty($tamano) && !empty($n_empleados) && !empty($tipo) && !empty($modalidad) && !empty($alcance) && !empty($area_conocimiento) && !empty($inicio) && !empty($termino) ){
 		    }else{
-				$consulta_insert=$con->prepare('INSERT INTO convenios_vinculacion (nombre_empresa,ubicacion,año_creacion,sector,giro,tamaño,n_empleados,tipo,modalidad,alcance,area_conocimiento,inicio,termino) VALUES(:nombre_empresa,:ubicacion,:año_creacion,:sector,:giro,:tamaño,:n_empleados,:tipo,:modalidad,:alcance,:area_conocimiento,:inicio,:termino)');
+				$consulta_insert=$con->prepare('INSERT INTO convenios_vinculacion (nombre_empresa,ubicacion,ano_creacion,sector,giro,tamano,n_empleados,tipo,modalidad,alcance,area_conocimiento,inicio,termino) VALUES(:nombre_empresa,:ubicacion,:ano_creacion,:sector,:giro,:tamano,:n_empleados,:tipo,:modalidad,:alcance,:area_conocimiento,:inicio,:termino)');
 				$consulta_insert->execute(array(
 					':nombre_empresa' =>$nombre_empresa,
 					':ubicacion' =>$ubicacion,
-					':año_creacion' =>$año_creacion,
+					':ano_creacion' =>$ano_creacion,
 					':sector' =>$sector,
 					':giro' =>$giro,
-					':tamaño' =>$tamaño,
+					':tamano' =>$tamano,
 					':n_empleados' =>$n_empleados,
 					':tipo' =>$tipo,
 					':modalidad' =>$modalidad,
@@ -79,12 +79,12 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="ubicacion" placeholder="UBICACION" class="input__text">
 			</div>
 			<div class="form-group">
-				<input type="text" name="año_creacion" placeholder="AÑO DE CREACION" class="input__text">
+				<input type="text" name="ano_creacion" placeholder="AÑO DE CREACION" class="input__text">
 				<input type="text" name="sector" placeholder="SECTOR" class="input__text">
 			</div>
 			<div class="form-group">
 				<input type="text" name="giro" placeholder="GIRO" class="input__text">
-				<input type="text" name="tamaño" placeholder="TAMAÑO" class="input__text">
+				<input type="text" name="tamano" placeholder="TAMAÑO" class="input__text">
 			</div>
 			<div class="form-group">
 				<input type="text" name="n_empleados" placeholder="N° DE EMPLEADOS" class="input__text">

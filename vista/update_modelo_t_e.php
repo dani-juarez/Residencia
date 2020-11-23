@@ -44,7 +44,8 @@ if (isset($_SESSION["usuario"])) {
 		$resultado=$_POST['resultado'];
 		$id=(int) $_GET['id'];
 
-		if(!empty($indicador) && !empty($resultado)){    
+		if(!empty($indicador) && !empty($resultado)){
+		    }else{
 				$consulta_update=$con->prepare(' UPDATE modelo_talento_emprendedor SET  
 					indicador=:indicador,
 					resultado=:resultado
@@ -57,7 +58,7 @@ if (isset($_SESSION["usuario"])) {
 				));
 				header('Location: modelo_talento_emprendedor.php');
             }
-            }
+        }
 ?>
 
 <!DOCTYPE html>

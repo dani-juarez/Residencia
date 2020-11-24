@@ -27,37 +27,42 @@ if (isset($_SESSION["usuario"])) {
 	include_once 'conexion.php';
 	
 	if(isset($_POST['guardar'])){
-		$indicador=$_POST['indicador'];
-		$resultado=$_POST['resultado'];
+		$nombre=$_POST['nombre'];
+		$tipo=$_POST['tipo'];
+		$n_licencias=$_POST['n_licencias'];
 
-		if(!empty($indicador) && !empty($resultado) ){
-		
-				$consulta_insert=$con->prepare('INSERT INTO modelo_talento_emprendedor (indicador,resultado) VALUES(:indicador,:resultado)');
+		if(!empty($nombre) && !empty($tipo) && !empty($n_licencias) ){
+			
+				$consulta_insert=$con->prepare('INSERT INTO software(nombre,tipo,n_licencias) VALUES(:nombre,:tipo,:n_licencias)');
 				$consulta_insert->execute(array(
-					':indicador' =>$indicador,
-					':resultado' =>$resultado
+					':nombre' =>$nombre,
+					':tipo' =>$tipo,
+					':n_licencias' =>$n_licencias
 				));
-				header('Location: modelo_talento_emprendedor.php');
+				header('Location: software.php');
 			}
-		 }
+		}
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../CSS/style.css">
+	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 	<div class="contenedor">
-		<h2>NUEVO MODELO TALENTO EMPRENDEDOR</h2>
+		<h2>NUEVO SOFTWARE</h2>
 		<form action="" method="post">
 			<div class="form-group">
-				<input type="text" name="indicador" placeholder="INDICADOR" class="input__text">
-				<input type="text" name="resultado" placeholder="RESULTADO" class="input__text">
+				<input type="text" name="nombre" placeholder="NOMBRE" class="input__text">
+				<input type="text" name="tipo" placeholder="TIPO" class="input__text">
+			</div>
+			<div class="form-group">
+				<input type="text" name="n_licencias" placeholder="NUMERO DE LICENCIA" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="modelo_talento_emprendedor.php" class="btn btn__danger">Cancelar</a>
+				<a href="software.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

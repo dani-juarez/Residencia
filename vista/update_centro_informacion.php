@@ -29,33 +29,34 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_GET['id'])){
 		$id=(int) $_GET['id'];
 
-		$buscar_id=$con->prepare('SELECT * FROM modelo_talento_emprendedor WHERE id=:id LIMIT 1');
+		$buscar_id=$con->prepare('SELECT * FROM centro_informacion WHERE id=:id LIMIT 1');
 		$buscar_id->execute(array(
 			':id'=>$id
 		));
 		$resultado=$buscar_id->fetch();
 	}else{
-		header('Location: modelo_talento_emprendedor.php');
+		header('Location: centro_informacion.php');
 	}
 
 
 	if(isset($_POST['guardar'])){
-		$indicador=$_POST['indicador'];
-		$resultado=$_POST['resultado'];
+		$concepto=$_POST['concepto'];
+		$cantidad=$_POST['cantidad'];
 		$id=(int) $_GET['id'];
 
-		if(!empty($indicador) && !empty($resultado)){ }else{
-				$consulta_update=$con->prepare(' UPDATE modelo_talento_emprendedor SET  
-					indicador=:indicador,
-					resultado=:resultado
+		if(!empty($concepto) && !empty($cantidad) ){
+
+				$consulta_update=$con->prepare(' UPDATE centro_informacion SET  
+					concepto=:concepto,
+					cantidad=:cantidad
 					WHERE id=:id;'
 				);
 				$consulta_update->execute(array(
-					':indicador' =>$indicador,
-					':resultado' =>$resultado,
+					':concepto' =>$concepto,
+					':cantidad' =>$cantidad,
 					':id' =>$id
 				));
-				header('Location: modelo_talento_emprendedor.php');
+				header('Location: centro_informacion.php');
 			}
 		}
 ?>
@@ -64,18 +65,18 @@ if (isset($_SESSION["usuario"])) {
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../CSS/style.css">
+	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 	<div class="contenedor">
-		<h2>ACTUALIZAR MODELO TALENTO EMPRENDEDOR</h2>
-		<form action="" method="POST">
+		<h2>ACTUALIZAR CONCEPTO</h2>
+		<form action="" method="post">
 			<div class="form-group">
-				<input type="text" name="indicador" placeholder="INDICADOR" value="<?php if($resultado) echo $resultado['indicador']; ?>" class="input__text">
-				<input type="text" name="resultado" placeholder="RESULTADO" value="<?php if($resultado) echo $resultado['resultado']; ?>" class="input__text">
+				<input type="text" name="concepto" placeholder="CONCEPTO" value="<?php if($resultado) echo $resultado['concepto']; ?>" class="input__text">
+				<input type="text" name="cantidad" placeholder="CANTIDAD" value="<?php if($resultado) echo $resultado['cantidad']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="modelo_talento_emprendedor.php" class="btn btn__danger">Cancelar</a>
+				<a href="centro_informacion.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

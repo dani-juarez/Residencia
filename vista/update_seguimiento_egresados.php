@@ -53,8 +53,7 @@ if (isset($_SESSION["usuario"])) {
         $parcial=$_POST['parcial'];
 		$id=(int) $_GET['id'];
 
-		if(!empty($programa) && !empty($nivel) && !empty($educativo) && !empty($primario) && !empty($secundario) && !empty($terciario) && !empty($publica) && !empty($privada) && !empty($si) && !empty($noo) && !empty($parcial) ){
-		}else{
+		if(!empty($programa) && !empty($nivel) && !empty($educativo) && !empty($primario) && !empty($secundario) && !empty($terciario) && !empty($publica) && !empty($privada) && !empty($si) && !empty($noo) && !empty($parcial) ) {}else{
 				$consulta_update=$con->prepare(' UPDATE seguimiento_egresados SET  
 					programa=:programa,
 					nivel=:nivel,

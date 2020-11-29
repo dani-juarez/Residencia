@@ -47,13 +47,13 @@ if (isset($_SESSION["usuario"])) {
         $mujer_reingreso=$_POST['mujer_reingreso'];
 		$id=(int) $_GET['id'];
 
-		if(!empty($programa) && !empty($hombre_nuevo) && !empty($mujer_nuevo) && !empty($hombre_reingreso) && !empty($mujer_reingreso) )
+		if(!empty($programa) && !empty($hombre_nuevo) && !empty($mujer_nuevo) && !empty($hombre_reingreso) && !empty($mujer_reingreso) ){
 				$consulta_update=$con->prepare(' UPDATE matricula SET  
 					programa=:programa,
 					hombre_nuevo=:hombre_nuevo,
                     mujer_nuevo=:mujer_nuevo,
                     hombre_reingreso=:hombre_reingreso,
-                    mujer_reingreso=:mujer_reingreso,
+                    mujer_reingreso=:mujer_reingreso
 					WHERE id=:id;'
 				);
 				$consulta_update->execute(array(
@@ -66,6 +66,7 @@ if (isset($_SESSION["usuario"])) {
 				));
 				header('Location: matricula.php');
 			}
+		}
 ?>
 
 <!DOCTYPE html>

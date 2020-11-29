@@ -215,7 +215,7 @@ form .btn{
 }
 
 
-/* table */
+/* tabla */
 table{
     width: 100%;
     border-collapse: collapse;
@@ -234,14 +234,14 @@ table .head td{
 
 table tr td{
     border:1px solid #9c9c9c;
-    padding: 7px;
-    font-size: 14px;
+    padding: 5px;
+    font-size: 12px;
     color: #000;
 }
 
 .btn__update{
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     background: #1b743c;
     color: #eee;
     border-radius: 5px;
@@ -250,7 +250,7 @@ table tr td{
 
 .btn__delete{
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     background: #8a0505;
     color: #eee;
     border-radius: 5px;

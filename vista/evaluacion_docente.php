@@ -27,7 +27,7 @@ if (isset($_SESSION["usuario"])) {
 <?php
 	include_once 'conexion.php';
 
-	$sentencia_select=$con->prepare('SELECT *FROM solicitantes ORDER BY id ASC');
+	$sentencia_select=$con->prepare('SELECT *FROM evaluacion_docente ORDER BY id ASC');
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
@@ -35,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
 		$select_buscar=$con->prepare('
-			SELECT *FROM solicitantes WHERE programa LIKE :campo;'
+			SELECT *FROM evaluacion_docente WHERE programa LIKE :campo;'
 		);
 
 		$select_buscar->execute(array(
@@ -56,60 +56,42 @@ if (isset($_SESSION["usuario"])) {
 </head>
 <body>
 	<div class="contenedor">
-		<h2>SOLICITANTES <br> AGOSTO - DICIEMBRE</h2>
+		<h2>CALIFICACION PROMEDIO DE LA EVALUACION DOCENTE <br> AGOSTO - DICIEMBRE</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="insert_solicitantes.php" class="btn btn__nuevo">Nuevo Solicitante</a>
+				<a href="insert_evaluacion_docente.php" class="btn btn__nuevo">Nueva Evaluacion</a>
 			</form>
 		</div>
 		<table>
 			<tr class="head">
 				<td>PROGRAMA</td>
 				<td>MODALIDAD</td>
-				<td>CAPACIDAD INSTALADA</td>
-				<td colspan="2">SOLICITANTES</td>
-				<td colspan="2">ACEPTADOS</td>
-				<td colspan="2">Acción</td>
+				<td>CALIFICACION PROMEDIO</td>
+				<td>TOTAL DE DOCENTES</td>
+				<td colspan="2">ACCION</td>
 			</tr>
-            
-            <tr class="head">
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>HOMBRES</td>
-				<td>MUJERES</td>
-                <td>HOMBRES</td>
-                <td>MUJERES</td>
-                <td></td>
-                <td></td>
-			</tr>
-
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['programa']; ?></td>
 					<td><?php echo $fila['modalidad']; ?></td>
-					<td><?php echo $fila['capacidad_instalada']; ?></td>
-					<td><?php echo $fila['hombres_solicitantes']; ?></td>
-					<td><?php echo $fila['mujeres_solicitantes']; ?></td>
-					<td><?php echo $fila['hombres_aceptados']; ?></td>
-                    <td><?php echo $fila['mujeres_aceptados']; ?></td>
-					<td><a href="update_solicitantes.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="delete_solicitantes.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					<td><?php echo $fila['calif_promedio']; ?></td>
+					<td><?php echo $fila['total_docentes']; ?></td>
+					<td><a href="update_evaluacion_docente.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_evaluacion_docente.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
 		</table>
 	</div>
 <br><br><br>
-
 <!--Segunda Tabla-->
 <?php
 	include_once 'conexion.php';
 
-	$sentencia_select=$con->prepare('SELECT *FROM solicitantes2 ORDER BY id ASC');
+	$sentencia_select=$con->prepare('SELECT *FROM evaluacion_docente2 ORDER BY id DESC');
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
@@ -117,7 +99,7 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
 		$select_buscar=$con->prepare('
-			SELECT *FROM solicitantes2 WHERE programa LIKE :campo;'
+			SELECT *FROM evaluacion_docente2 WHERE programa LIKE :campo;'
 		);
 
 		$select_buscar->execute(array(
@@ -138,54 +120,36 @@ if (isset($_SESSION["usuario"])) {
 </head>
 <body>
 	<div class="contenedor">
-		<h2>SOLICITANTES <br> ENERO - JUNIO</h2>
+		<h2>CALIFICACION PROMEDIO DE LA EVALUACION DOCENTE <br> ENERO - JUNIO</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="insert_solicitantes2.php" class="btn btn__nuevo">Nuevo Solicitante</a>
+				<a href="insert_evaluacion_docente2.php" class="btn btn__nuevo">Nueva Evaluacion</a>
 			</form>
 		</div>
 		<table>
 			<tr class="head">
 				<td>PROGRAMA</td>
 				<td>MODALIDAD</td>
-				<td>CAPACIDAD INSTALADA</td>
-				<td colspan="2">SOLICITANTES</td>
-				<td colspan="2">ACEPTADOS</td>
-				<td colspan="2">Acción</td>
+				<td>CALIFICACION PROMEDIO</td>
+				<td>TOTAL DE DOCENTES</td>
+				<td colspan="2">ACCION</td>
 			</tr>
-            
-            <tr class="head">
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>HOMBRES</td>
-				<td>MUJERES</td>
-                <td>HOMBRES</td>
-                <td>MUJERES</td>
-                <td></td>
-                <td></td>
-			</tr>
-
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['programa']; ?></td>
 					<td><?php echo $fila['modalidad']; ?></td>
-					<td><?php echo $fila['capacidad_instalada']; ?></td>
-					<td><?php echo $fila['hombres_solicitantes']; ?></td>
-					<td><?php echo $fila['mujeres_solicitantes']; ?></td>
-					<td><?php echo $fila['hombres_aceptados']; ?></td>
-                    <td><?php echo $fila['mujeres_aceptados']; ?></td>
-					<td><a href="update_solicitantes2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="delete_solicitantes2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					<td><?php echo $fila['calif_promedio']; ?></td>
+					<td><?php echo $fila['total_docentes']; ?></td>
+					<td><a href="update_evaluacion_docente2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_evaluacion_docente2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
 		</table>
 	</div>
-
 
 </body>
 </html>

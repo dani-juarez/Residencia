@@ -29,7 +29,7 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_GET['id'])){
 		$id=(int) $_GET['id'];
 
-		$buscar_id=$con->prepare('SELECT * FROM solicitantes WHERE id=:id LIMIT 1');
+		$buscar_id=$con->prepare('SELECT * FROM solicitantes2 WHERE id=:id LIMIT 1');
 		$buscar_id->execute(array(
 			':id'=>$id
 		));
@@ -50,7 +50,7 @@ if (isset($_SESSION["usuario"])) {
 		$id=(int) $_GET['id'];
 
 		if(!empty($programa) && !empty($modalidad) && !empty($capacidad_instalada) && !empty($hombres_solicitantes) && !empty($mujeres_solicitantes) && !empty($hombres_aceptados) && !empty($mujeres_aceptados) ){
-				$consulta_update=$con->prepare(' UPDATE solicitantes SET  
+				$consulta_update=$con->prepare(' UPDATE solicitantes2 SET  
 					programa=:programa,
 					modalidad=:modalidad,
 					capacidad_instalada=:capacidad_instalada,

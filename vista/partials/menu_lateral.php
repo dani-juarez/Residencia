@@ -10,11 +10,11 @@
             <li><a href="egresados_titulados.php"><span class="icon-pencil"></span>EGRESADOS Y TITULADOS</a></li>
             <li><a href="becas.php"><span class="icon-pencil"></span>BECAS</a></li>
             <li><a href="solicitantes.php"><span class="icon-pencil"></span>SOLICITANTES</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>EVALUACION DOCENTE</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>CONFORMIDAD CON EL APRENDIZAJE</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>EXTRAESCOLARES</a></li>
+			<li><a href="evaluacion_docente.php"><span class="icon-pencil"></span>EVALUACION DOCENTE</a></li>
+			<li><a href="conformidad_aprendizaje.php"><span class="icon-pencil"></span>CONFORMIDAD CON EL APRENDIZAJE</a></li>
+			<li><a href="extraescolares.php"><span class="icon-pencil"></span>EXTRAESCOLARES</a></li>
 			<li><a href="instalaciones.php"><span class="icon-pencil"></span>INSTALACIONES</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>EVENTOS ACADÉMICOS</a></li>
+			<li><a href="eventos_acedemicos.php"><span class="icon-pencil"></span>EVENTOS ACADÉMICOS</a></li>
 			<li><a href="#"><span class="icon-pencil"></span>R. HUMANOS 1</a></li>
 			<li><a href="#"><span class="icon-pencil"></span>R. HUMANOS 2</a></li>
 			<li><a href="recursos_financieros.php"><span class="icon-pencil"></span>RECURSOS FINANCIEROS</a></li>

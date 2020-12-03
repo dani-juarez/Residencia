@@ -15,7 +15,7 @@
 			<li><a href="extraescolares.php"><span class="icon-pencil"></span>EXTRAESCOLARES</a></li>
 			<li><a href="instalaciones.php"><span class="icon-pencil"></span>INSTALACIONES</a></li>
 			<li><a href="eventos_acedemicos.php"><span class="icon-pencil"></span>EVENTOS ACADÉMICOS</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>R. HUMANOS 1</a></li>
+			<li><a href="r_humanos.php"><span class="icon-pencil"></span>R. HUMANOS 1</a></li>
 			<li><a href="#"><span class="icon-pencil"></span>R. HUMANOS 2</a></li>
 			<li><a href="recursos_financieros.php"><span class="icon-pencil"></span>RECURSOS FINANCIEROS</a></li>
 			<li><a href="centro_informacion.php"><span class="icon-pencil"></span>CENTRO DE INFORMACION</a></li>

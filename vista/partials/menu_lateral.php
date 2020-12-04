@@ -6,7 +6,7 @@
     <div id="sidebar" class="sidebar">
         <ul class="menu">
             <li><a href="matricula.php"><span class="icon-pencil"></span> MATRICULA</a></li>
-            <li><a href="#"><span class="icon-pencil"></span> ALUMNOS, EDAD, GENERO</a></li>
+            <li><a href="alumnos_edad_genero.php"><span class="icon-pencil"></span> ALUMNOS, EDAD, GENERO</a></li>
             <li><a href="egresados_titulados.php"><span class="icon-pencil"></span>EGRESADOS Y TITULADOS</a></li>
             <li><a href="becas.php"><span class="icon-pencil"></span>BECAS</a></li>
             <li><a href="solicitantes.php"><span class="icon-pencil"></span>SOLICITANTES</a></li>
@@ -16,13 +16,13 @@
 			<li><a href="instalaciones.php"><span class="icon-pencil"></span>INSTALACIONES</a></li>
 			<li><a href="eventos_acedemicos.php"><span class="icon-pencil"></span>EVENTOS ACADÉMICOS</a></li>
 			<li><a href="r_humanos.php"><span class="icon-pencil"></span>R. HUMANOS 1</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>R. HUMANOS 2</a></li>
+			<li><a href="r_humanos2.php"><span class="icon-pencil"></span>R. HUMANOS 2</a></li>
 			<li><a href="recursos_financieros.php"><span class="icon-pencil"></span>RECURSOS FINANCIEROS</a></li>
 			<li><a href="centro_informacion.php"><span class="icon-pencil"></span>CENTRO DE INFORMACION</a></li>
 			<li><a href="software.php"><span class="icon-pencil"></span>SOFTWARE</a></li>
 			<li><a href="hardware.php"><span class="icon-pencil"></span>HARDWARE</a></li>
 			<li><a href="centro_computo.php"><span class="icon-pencil"></span>CENTRO DE COMPUTO</a></li>
-			<li><a href="#"><span class="icon-pencil"></span>SERVICIO SOCIAL</a></li>
+			<li><a href="servicio_social_residencia_profesional.php"><span class="icon-pencil"></span>SERVICIO SOCIAL Y RESIDENCIA PROFESIONAL</a></li>
 			<li><a href="convenios_vinculacion.php"><span class="icon-pencil"></span>CONVENIOS DE VINCULACION</a></li>
 			<li><a href="seguimiento_egresados.php"><span class="icon-pencil"></span>SEGUIMIENTO DE EGRESADOS</a></li>
 			<li><a href="modelo_talento_emprendedor.php"><span class="icon-pencil"></span>MODELO TALENTO EMPRENDEDOR</a></li>

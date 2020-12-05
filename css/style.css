@@ -219,6 +219,8 @@ form .btn{
 table{
     width: 100%;
     border-collapse: collapse;
+    flex-wrap: nowrap;
+    scroll-margin: auto;
 }
 
 table .head{

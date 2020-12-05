@@ -13,7 +13,7 @@ if (isset($_SESSION["usuario"])) {
 	<div class="starter-template">
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h1>
+				<h2><strong>Bienvenido</strong> <?php echo $_SESSION["usuario"]["nombre"]; ?></h2>
 				<p><span class="label label-info"><?php echo $_SESSION["usuario"]["privilegio"] == 1 ? 'Administrador' : 'Usuario'; ?></span></p>
 				
 			</div>

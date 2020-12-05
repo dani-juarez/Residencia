@@ -27,7 +27,7 @@ if (isset($_SESSION["usuario"])) {
 <?php
 	include_once 'conexion.php';
 
-	$sentencia_select=$con->prepare('SELECT *FROM responsables ORDER BY id ASC');
+	$sentencia_select=$con->prepare('SELECT *FROM matricula ORDER BY id ASC');
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
@@ -35,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
 		$select_buscar=$con->prepare('
-			SELECT *FROM responsables WHERE responsable LIKE :campo;'
+			SELECT *FROM matricula WHERE programa LIKE :campo;'
 		);
 
 		$select_buscar->execute(array(
@@ -45,32 +45,49 @@ if (isset($_SESSION["usuario"])) {
 		$resultado=$select_buscar->fetchAll();
 
 	}
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
-    <!-- Tabla Responsables -->
+<h2>APORTE A LA MATRICULA NACIONAL (LICENCIATURA) <br>
+          PERIODO ENERO-JUNIO 2020</h2>
+<!-- Tabla matricula-->
+<div class="contenedor">
+		<div class="barra__buscador">
+			<form action="" class="formulario" method="post">
+				<input type="text" name="buscar" placeholder="Buscar Programa" 
+				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
+				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+			</form>
+		</div>
 		<table>
 			<tr class="head">
-                <td>Id</td>
-				<td>Responsable</td>
-				<td>Departamento</td>
+				<td>PROGRAMA</td>
+				<td colspan="2" scope="colgroup">NUEVO INGRESO</td>
+				<td colspan="2" scope="colgroup">REINGRESO</td>
+				
 			</tr>
+			<tr class="head">
+			<td scope="col"></td>
+			<td scope="col">HOMBRES</td>
+			<td scope="col">MUJERES</td>
+			<td scope="col">HOMBRES</td>
+			<td scope="col">MUJERES</td>
+
 			<?php foreach($resultado as $fila):?>
 				<tr >
-					<td><?php echo $fila['id']; ?></td>
-					<td><?php echo $fila['responsable']; ?></td>
-					<td><?php echo $fila['departamento']; ?></td>
+					<td><?php echo $fila['programa']; ?></td>
+					<td><?php echo $fila['hombre_nuevo']; ?></td>
+					<td><?php echo $fila['mujer_nuevo']; ?></td>
+					<td><?php echo $fila['hombre_reingreso']; ?></td>
+					<td><?php echo $fila['mujer_reingreso']; ?></td>
 				</tr>
 			<?php endforeach ?>
 
 		</table>
-	</div>
+</div>
 </body>
-</html> 
+</html>

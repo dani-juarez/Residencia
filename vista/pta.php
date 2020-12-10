@@ -51,7 +51,6 @@ if (isset($_SESSION["usuario"])) {
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Inicio</title>
 	<link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
@@ -86,7 +85,7 @@ if (isset($_SESSION["usuario"])) {
 </script>
 
 	<div class="contenedor">
-		<h2>MODULO PDI TECNM</h2>
+		<h2>MODULO PTA TECNM</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
 				<input type="text" name="buscar" placeholder="Buscar por Area Responsable" 

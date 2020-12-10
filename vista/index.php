@@ -18,15 +18,15 @@
 
 							<div class="form-group">
 								<label for="usuario">Usuario</label>
-								<input type="text" name="txtUsuario" class="form-control" id="usuario" autofocus required placeholder="USUARIO">
+								<center><input type="text" name="txtUsuario" class="form-control" id="usuario" autofocus required placeholder="USUARIO"></center>
 							</div>
 
 							<div class="form-group">
 								<label for="password">Contraseña</label>
-								<input type="password" name="txtPassword" class="form-control" required id="password" placeholder="CONTRASEÑA">
+								<center><input type="password" name="txtPassword" class="form-control" required id="password" placeholder="CONTRASEÑA"></center>
 							</div>
 
-							<button type="submit" class="btn btn-success">Ingresar</button>
+							<center><button type="submit" class="btn btn-success">Ingresar</button></center>
 						</form>
 					</div>
 				</div>

@@ -56,8 +56,8 @@ if (isset($_SESSION["usuario"])) {
 </head>
 <body>
 	<div class="contenedor">
-		<h2>MODULO PDI TECNM</h2>
-		
+		<center><h3>MODULO PTA TECNM</h3></center>
+
 		<table>
 			<tr class="head">
 				<td>Eje Estratégico/Eje Transversal (ET)</td>

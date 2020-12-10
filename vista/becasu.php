@@ -9,6 +9,7 @@ if (isset($_SESSION["usuario"])) {
     header("location:index.php");
 }
 ?>
+
 <?php include 'partials/menu.php';?>	
 <div class="container">
 	<div class="starter-template">
@@ -62,6 +63,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_becas.php" class="btn btn__nuevo">Nuevo Programa</a>
 			</form>
 		</div>
 		<table>
@@ -78,6 +80,7 @@ if (isset($_SESSION["usuario"])) {
 				<td colspan="2">9NO SEMESTRE</td>
 				<td>TOTAL HOMBRES</td>
 				<td>TOTAL MUJERES</td>
+				<td colspan="2">Acción</td>
 			</tr>
 
 			<tr class="head">
@@ -129,6 +132,8 @@ if (isset($_SESSION["usuario"])) {
 					<td><?php echo $fila['mujeres_noveno']; ?></td>
 					<td><?php echo $fila['hombres_total']; ?></td>
 					<td><?php echo $fila['mujeres_total']; ?></td>
+					<td><a href="update_becas.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_becas.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 		</table>
@@ -168,6 +173,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_becas2.php" class="btn btn__nuevo">Nuevo Programa</a>
 			</form>
 		</div>
 		<table>
@@ -184,6 +190,7 @@ if (isset($_SESSION["usuario"])) {
 				<td colspan="2">9NO SEMESTRE</td>
 				<td>TOTAL HOMBRES</td>
 				<td>TOTAL MUJERES</td>
+				<td colspan="2">Acción</td>
 			</tr>
 
 			<tr class="head">
@@ -235,6 +242,8 @@ if (isset($_SESSION["usuario"])) {
 					<td><?php echo $fila['mujeres_noveno']; ?></td>
 					<td><?php echo $fila['hombres_total']; ?></td>
 					<td><?php echo $fila['mujeres_total']; ?></td>
+					<td><a href="update_becas2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_becas2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 		</table>

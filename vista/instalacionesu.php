@@ -1,14 +1,14 @@
+<?php include 'partials/menu_lateral_se.php';?>
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
     header("location:index.php");
 }
 ?>
-
 <?php include 'partials/menu.php';?>	
 <div class="container">
 	<div class="starter-template">
@@ -24,11 +24,10 @@ if (isset($_SESSION["usuario"])) {
 
 <?php include 'partials/footer.php';?>
 
-
 <?php
 	include_once 'conexion.php';
 
-	$sentencia_select=$con->prepare('SELECT *FROM usuarios ORDER BY id ASC');
+	$sentencia_select=$con->prepare('SELECT *FROM instalaciones ORDER BY id ASC');
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
@@ -36,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
 		$select_buscar=$con->prepare('
-			SELECT *FROM usuarios WHERE nombre LIKE :campo OR usuario LIKE :campo;'
+			SELECT *FROM instalaciones WHERE concepto instalacion :campo;'
 		);
 
 		$select_buscar->execute(array(
@@ -46,52 +45,42 @@ if (isset($_SESSION["usuario"])) {
 		$resultado=$select_buscar->fetchAll();
 
 	}
-
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../CSS/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-
-	<div class="contenedor">
-		<h2>USUARIOS</h2>
+<h2>INSTALACIONES</h2>
+<!-- Tabla Primera-->
+<div class="contenedor">
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
-				<input type="text" name="buscar" placeholder="Buscar Nombre o Usuario" 
+				<input type="text" name="buscar" placeholder="Buscar Instalacion" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="insert.php" class="btn btn__nuevo">Nuevo Usuario</a>
+				<a href="insert_instalacion.php" class="btn btn__nuevo">Nueva Instalacion</a>
 			</form>
 		</div>
 		<table>
 			<tr class="head">
-				<td>Id</td>
-				<td>Nombre</td>
-				<td>Usuario</td>
-				<td>Correo</td>
-				<td>Contraseña</td>
-				<td>Privilegio</td>
+				<td>INSTALACION</td>
+				<td>CANTIDAD</td>
 				<td colspan="2">Acción</td>
 			</tr>
+
 			<?php foreach($resultado as $fila):?>
 				<tr >
-					<td><?php echo $fila['id']; ?></td>
-					<td><?php echo $fila['nombre']; ?></td>
-					<td><?php echo $fila['usuario']; ?></td>
-					<td><?php echo $fila['email']; ?></td>
-					<td><?php echo $fila['password']; ?></td>
-					<td><?php echo $fila['privilegio']; ?></td>
-					<td><a href="update.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					<td><?php echo $fila['instalacion']; ?></td>
+					<td><?php echo $fila['cantidad']; ?></td>
+					<td><a href="update_instalacion.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_instalacion.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
 		</table>
-	</div>
+</div>
+<br><br><br>
 </body>
 </html>

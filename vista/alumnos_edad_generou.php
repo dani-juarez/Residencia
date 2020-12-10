@@ -62,6 +62,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Edad" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_gestion.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -71,6 +72,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>MUJERES</td>
 				<td colspan="2">CON DISCAPACIDAD</td>
 				<td colspan="3">TOTAL</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -82,6 +84,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>TOTAL HOMBRES</td>
                 <td>TOTAL MUJERES</td>
                 <td>TOTAL</td>
+                <td></td>
+                <td></td>
 			</tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -94,6 +98,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['hombres_total']; ?></td>
                     <td><?php echo $fila['mujeres_total']; ?></td>
                     <td><?php echo $fila['total']; ?></td>
+					<td><a href="update_gestion.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_gestion.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -139,6 +145,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Edad" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_tics.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -148,6 +155,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>MUJERES</td>
 				<td colspan="2">CON DISCAPACIDAD</td>
 				<td colspan="3">TOTAL</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -159,6 +167,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>TOTAL HOMBRES</td>
                 <td>TOTAL MUJERES</td>
                 <td>TOTAL</td>
+                <td></td>
+                <td></td>
 			</tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -171,6 +181,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['hombres_total']; ?></td>
                     <td><?php echo $fila['mujeres_total']; ?></td>
                     <td><?php echo $fila['total']; ?></td>
+					<td><a href="update_tics.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_tics.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -216,6 +228,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Edad" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_diseño.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -225,6 +238,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>MUJERES</td>
 				<td colspan="2">CON DISCAPACIDAD</td>
 				<td colspan="3">TOTAL</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -236,6 +250,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>TOTAL HOMBRES</td>
                 <td>TOTAL MUJERES</td>
                 <td>TOTAL</td>
+                <td></td>
+                <td></td>
 			</tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -248,6 +264,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['hombres_total']; ?></td>
                     <td><?php echo $fila['mujeres_total']; ?></td>
                     <td><?php echo $fila['total']; ?></td>
+					<td><a href="update_diseño.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_diseño.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -293,6 +311,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_alumnos_edad_genero.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -304,6 +323,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>TOTAL</td>
                 <td colspan="2">CON DISCAPACIDAD</td>
                 <td colspan="2">HABLANTES DE UNA LENGUA</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -318,6 +338,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>MUJERES</td>
                 <td>HOMBRES</td>
                 <td>MUJERES</td>
+                <td></td>
+				<td></td>
             </tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -333,6 +355,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['mujeres_dis']; ?></td>
                     <td><?php echo $fila['hombres_lengua']; ?></td>
                     <td><?php echo $fila['mujeres_lengua']; ?></td>
+					<td><a href="update_alumnos_edad_genero.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_alumnos_edad_genero.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -378,6 +402,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Edad" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_gestion2.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -387,6 +412,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>MUJERES</td>
 				<td colspan="2">CON DISCAPACIDAD</td>
 				<td colspan="3">TOTAL</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -398,6 +424,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>TOTAL HOMBRES</td>
                 <td>TOTAL MUJERES</td>
                 <td>TOTAL</td>
+                <td></td>
+                <td></td>
 			</tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -410,6 +438,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['hombres_total']; ?></td>
                     <td><?php echo $fila['mujeres_total']; ?></td>
                     <td><?php echo $fila['total']; ?></td>
+					<td><a href="update_gestion2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_gestion2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -455,6 +485,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Edad" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_tics2.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -464,6 +495,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>MUJERES</td>
 				<td colspan="2">CON DISCAPACIDAD</td>
 				<td colspan="3">TOTAL</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -475,6 +507,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>TOTAL HOMBRES</td>
                 <td>TOTAL MUJERES</td>
                 <td>TOTAL</td>
+                <td></td>
+                <td></td>
 			</tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -487,6 +521,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['hombres_total']; ?></td>
                     <td><?php echo $fila['mujeres_total']; ?></td>
                     <td><?php echo $fila['total']; ?></td>
+					<td><a href="update_tics2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_tics2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -532,6 +568,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar por Edad" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_diseño2.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -567,6 +604,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['hombres_total']; ?></td>
                     <td><?php echo $fila['mujeres_total']; ?></td>
                     <td><?php echo $fila['total']; ?></td>
+					<td><a href="update_diseño2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_diseño2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
@@ -612,6 +651,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_alumnos_edad_genero2.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
@@ -623,6 +663,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>TOTAL</td>
                 <td colspan="2">CON DISCAPACIDAD</td>
                 <td colspan="2">HABLANTES DE UNA LENGUA</td>
+				<td colspan="2">Acción</td>
             </tr>
             
             <tr class="head">
@@ -637,6 +678,8 @@ if (isset($_SESSION["usuario"])) {
                 <td>MUJERES</td>
                 <td>HOMBRES</td>
                 <td>MUJERES</td>
+                <td></td>
+				<td></td>
             </tr>
 
 			<?php foreach($resultado as $fila):?>
@@ -652,6 +695,8 @@ if (isset($_SESSION["usuario"])) {
                     <td><?php echo $fila['mujeres_dis']; ?></td>
                     <td><?php echo $fila['hombres_lengua']; ?></td>
                     <td><?php echo $fila['mujeres_lengua']; ?></td>
+					<td><a href="update_alumnos_edad_genero2.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_alumnos_edad_genero2.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 

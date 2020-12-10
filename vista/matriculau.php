@@ -61,6 +61,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="buscar" placeholder="Buscar Programa" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+				<a href="insert_matricula.php" class="btn btn__nuevo">Nuevo Aporte</a>
 			</form>
 		</div>
 		<table>
@@ -68,7 +69,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>PROGRAMA</td>
 				<td colspan="2" scope="colgroup">NUEVO INGRESO</td>
 				<td colspan="2" scope="colgroup">REINGRESO</td>
-				
+				<td colspan="2">Acción</td>
 			</tr>
 			<tr class="head">
 			<td scope="col"></td>
@@ -76,6 +77,8 @@ if (isset($_SESSION["usuario"])) {
 			<td scope="col">MUJERES</td>
 			<td scope="col">HOMBRES</td>
 			<td scope="col">MUJERES</td>
+			<td scope="col"></td>
+			<td scope="col"></td></tr>
 
 			<?php foreach($resultado as $fila):?>
 				<tr >
@@ -84,6 +87,8 @@ if (isset($_SESSION["usuario"])) {
 					<td><?php echo $fila['mujer_nuevo']; ?></td>
 					<td><?php echo $fila['hombre_reingreso']; ?></td>
 					<td><?php echo $fila['mujer_reingreso']; ?></td>
+					<td><a href="update_matricula.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="delete_matricula.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 

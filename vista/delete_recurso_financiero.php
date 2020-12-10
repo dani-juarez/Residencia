@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: recursos_financieros.php');
+		header('Location: recursos_financierosu.php');
 	}else{
-		header('Location: recursos_financieros.php');
+		header('Location: recursos_financierosu.php');
 	}
  ?>

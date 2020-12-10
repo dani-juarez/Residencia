@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -35,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 		));
 		$resultado=$buscar_id->fetch();
 	}else{
-		header('Location: evaluacion_docente.php');
+		header('Location: evaluacion_docenteu.php');
 	}
 
 
@@ -62,7 +62,7 @@ if (isset($_SESSION["usuario"])) {
 					':total_docentes' =>$total_docentes,
 					':id' =>$id
 				));
-				header('Location: evaluacion_docente.php');
+				header('Location: evaluacion_docenteu.php');
 			}
 		}
 ?>
@@ -86,7 +86,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="total_docentes" placeholder="TOTAL DE DOCENTES" value="<?php if($resultado) echo $resultado['total_docentes']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="evaluacion_docente.php" class="btn btn__danger">Cancelar</a>
+				<a href="evaluacion_docenteu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

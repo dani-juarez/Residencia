@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: modelo_talento_emprendedor.php');
+		header('Location: modelo_talento_emprendedoru.php');
 	}else{
-		header('Location: modelo_talento_emprendedor.php');
+		header('Location: modelo_talento_emprendedoru.php');
 	}
  ?>

@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -35,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 		));
 		$resultado=$buscar_id->fetch();
 	}else{
-		header('Location: convenios_vinculacion.php');
+		header('Location: convenios_vinculacionu.php');
 	}
 
 
@@ -89,7 +89,7 @@ if (isset($_SESSION["usuario"])) {
                     ':termino' =>$termino,
 					':id' =>$id
 				));
-				header('Location: convenios_vinculacion.php');
+				header('Location: convenios_vinculacionu.php');
             }
       }
 ?>
@@ -132,7 +132,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="termino" placeholder="TERMINO" value="<?php if($resultado) echo $resultado['termino']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="convenios_vinculacion.php" class="btn btn__danger">Cancelar</a>
+				<a href="convenios_vinculacionu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

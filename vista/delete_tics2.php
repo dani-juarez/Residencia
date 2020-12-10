@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: alumnos_edad_genero.php');
+		header('Location: alumnos_edad_generou.php');
 	}else{
-		header('Location: alumnos_edad_genero.php');
+		header('Location: alumnos_edad_generou.php');
 	}
  ?>

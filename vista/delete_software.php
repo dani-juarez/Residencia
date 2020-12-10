@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: software.php');
+		header('Location: softwareu.php');
 	}else{
-		header('Location: software.php');
+		header('Location: softwareu.php');
 	}
  ?>

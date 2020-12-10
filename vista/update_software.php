@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -35,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 		));
 		$resultado=$buscar_id->fetch();
 	}else{
-		header('Location: software.php');
+		header('Location: softwareu.php');
 	}
 
 
@@ -59,7 +59,7 @@ if (isset($_SESSION["usuario"])) {
 					':n_licencias' =>$n_licencias,
 					':id' =>$id
 				));
-				header('Location: software.php');
+				header('Location: softwareu.php');
 			}
 		}
 ?>
@@ -82,7 +82,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="n_licencias" placeholder="NUMERO DE LICENCIAS" value="<?php if($resultado) echo $resultado['n_licencias']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="software.php" class="btn btn__danger">Cancelar</a>
+				<a href="softwareu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

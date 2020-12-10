@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: conformidad_aprendizaje.php');
+		header('Location: conformidad_aprendizajeu.php');
 	}else{
-		header('Location: conformidad_aprendizaje.php');
+		header('Location: conformidad_aprendizajeu.php');
 	}
  ?>

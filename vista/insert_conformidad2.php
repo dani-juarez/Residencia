@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -39,7 +39,7 @@ if (isset($_SESSION["usuario"])) {
 					':asignados' =>$asignados,
 					':aprobados' =>$aprobados
 				));
-				header('Location: conformidad_aprendizaje.php');
+				header('Location: conformidad_aprendizajeu.php');
 			}
 		}
 ?>
@@ -62,7 +62,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="aprobados" placeholder="APROBADOS" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="conformidad_aprendizaje.php" class="btn btn__danger">Cancelar</a>
+				<a href="conformidad_aprendizajeu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

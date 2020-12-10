@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: convenios_vinculacion.php');
+		header('Location: convenios_vinculacionu.php');
 	}else{
-		header('Location: convenios_vinculacion.php');
+		header('Location: convenios_vinculacionu.php');
 	}
  ?>

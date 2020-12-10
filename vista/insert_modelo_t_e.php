@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -37,7 +37,7 @@ if (isset($_SESSION["usuario"])) {
 					':indicador' =>$indicador,
 					':resultado' =>$resultado
 				));
-				header('Location: modelo_talento_emprendedor.php');
+				header('Location: modelo_talento_emprendedoru.php');
 			}
 		 }
 ?>
@@ -57,7 +57,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="resultado" placeholder="RESULTADO" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="modelo_talento_emprendedor.php" class="btn btn__danger">Cancelar</a>
+				<a href="modelo_talento_emprendedoru.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -35,7 +35,7 @@ if (isset($_SESSION["usuario"])) {
 		));
 		$resultado=$buscar_id->fetch();
 	}else{
-		header('Location: hardware.php');
+		header('Location: hardwareu.php');
 	}
 
 
@@ -95,7 +95,7 @@ if (isset($_SESSION["usuario"])) {
                     ':teclado' =>$teclado,
 					':id' =>$id
 				));
-				header('Location: hardware.php');
+				header('Location: hardwareu.php');
 			}
 		}
 ?>
@@ -142,7 +142,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="teclado" placeholder="TECLADO" value="<?php if($resultado) echo $resultado['teclado']; ?>" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="hardware.php" class="btn btn__danger">Cancelar</a>
+				<a href="hardwareu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

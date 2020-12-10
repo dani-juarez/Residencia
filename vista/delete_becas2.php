@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: becas.php');
+		header('Location: becasu.php');
 	}else{
-		header('Location: becas.php');
+		header('Location: becasu.php');
 	}
  ?>

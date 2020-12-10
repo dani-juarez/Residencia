@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: servicio_social_residencia_profesional.php');
+		header('Location: servicio_social_residencia_profesionalu.php');
 	}else{
-		header('Location: servicio_social_residencia_profesional.php');
+		header('Location: servicio_social_residencia_profesionalu.php');
 	}
  ?>

@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -54,7 +54,7 @@ if (isset($_SESSION["usuario"])) {
                     ':noo' =>$noo,
                     ':parcial' =>$parcial
 				));
-				header('Location: seguimiento_egresados.php');
+				header('Location: seguimiento_egresadosu.php');
 			}	
 		}	
 ?>
@@ -93,7 +93,7 @@ if (isset($_SESSION["usuario"])) {
 				<input type="text" name="parcial" placeholder="PARCIAL" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="seguimiento_egresados.php" class="btn btn__danger">Cancelar</a>
+				<a href="seguimiento_egresadosu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

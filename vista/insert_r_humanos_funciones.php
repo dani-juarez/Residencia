@@ -1,7 +1,7 @@
 <?php include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:usuario.php");
     }
 } else {
@@ -57,7 +57,7 @@ if (isset($_SESSION["usuario"])) {
                     ':mujeres_total' =>$mujeres_total,
                     ':total' =>$total
 				));
-				header('Location: r_humanos.php');
+				header('Location: r_humanosu.php');
 			}
 		}
 ?>
@@ -97,7 +97,7 @@ if (isset($_SESSION["usuario"])) {
             <input type="text" name="total" placeholder="TOTAL" class="input__text">
 			</div>
 			<div class="btn__group">
-				<a href="r_humanos.php" class="btn btn__danger">Cancelar</a>
+				<a href="r_humanosu.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>

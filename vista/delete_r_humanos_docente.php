@@ -7,8 +7,8 @@
 		$delete->execute(array(
 			':id'=>$id
 		));
-		header('Location: r_humanos2.php');
+		header('Location: r_humanos2u.php');
 	}else{
-		header('Location: r_humanos2.php');
+		header('Location: r_humanos2u.php');
 	}
  ?>

@@ -189,8 +189,8 @@ if (isset($_SESSION["usuario"])) {
 		</table>
     </div>
 <br><br>
-                                                                    <!--Tercera Tabla-->
-                                                                    <?php
+                                            <!--Tercera Tabla-->
+<?php
 	include_once 'conexion.php';
 
 	$sentencia_select=$con->prepare('SELECT *FROM diseño ORDER BY id ASC');
@@ -272,7 +272,7 @@ if (isset($_SESSION["usuario"])) {
 		</table>
     </div>
 <br><br>
-                                                <!--Alumnos Edad Genero-->
+                                        <!--Alumnos Edad Genero-->
 <?php
 	include_once 'conexion.php';
 
@@ -363,7 +363,7 @@ if (isset($_SESSION["usuario"])) {
 		</table>
 	</div>
 <br><br>
-																<!--Gestion Empresarial 2-->
+											<!--Gestion Empresarial 2-->
 <?php
 	include_once 'conexion.php';
 
@@ -446,7 +446,7 @@ if (isset($_SESSION["usuario"])) {
 		</table>
     </div>
 <br><br>
-														<!-- Tics 2 -->
+											<!-- Tics 2 -->
 <?php
 	include_once 'conexion.php';
 
@@ -529,7 +529,7 @@ if (isset($_SESSION["usuario"])) {
 		</table>
     </div>
 <br><br>
-																<!-- Diseño 2 -->
+											<!-- Diseño 2 -->
 <?php
 	include_once 'conexion.php';
 
@@ -612,7 +612,7 @@ if (isset($_SESSION["usuario"])) {
 		</table>
     </div>
 <br><br>
-																<!--Alumnos Edad Genero 2 -->
+											<!--Alumnos Edad Genero 2 -->
 <?php
 	include_once 'conexion.php';
 

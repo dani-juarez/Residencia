@@ -1,4 +1,6 @@
-<?php include 'partials/head.php';?>
+<?php
+session_start();
+include 'partials/head.php';?>
 <?php
 if (isset($_SESSION["usuario"])) {
     if ($_SESSION["usuario"]["privilegio"] == 1) {
@@ -8,7 +10,9 @@ if (isset($_SESSION["usuario"])) {
     header("location:index.php");
 }
 ?>
-<?php include 'partials/menu.php';?>
+
+<?php 
+include 'partials/menu.php';?>
 <div class="container">
 	<div class="starter-template">
 		<div class="jumbotron">

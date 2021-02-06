@@ -17,7 +17,7 @@ foreach ($fileContacts as $contact)
 // insertar contactos
 foreach ($contactList as $contactData) 
 {
-	$conexion->query("INSERT INTO pdi (eje,objetivo,numero_linea_accion,linea_accion,numero_proyecto,proyecto,indicador,unidad_medida,numero_accion,accion_comprometida,meta,indicador_interno,medio_verificacion,area_responsable)
+	$conexion->query("INSERT INTO pdi (eje,objetivo,linea_accion,proyecto,numero_indicador,indicador,unidad_medida,metodo_calculo,numerador,denominador,area_responsable,mil,dosmil,tresmil,cuatromil,cincomil,ffpsr,ai,pp,eje_estructura,objetivo_estructura,la,proyecto_estructura,numero_indicador_estructura)
 						 VALUES
 
 						  ('{$contactData[0]}',
@@ -33,7 +33,17 @@ foreach ($contactList as $contactData)
 						  '{$contactData[10]}',
 						  '{$contactData[11]}',
 						  '{$contactData[12]}',
-						  '{$contactData[13]}'
+						  '{$contactData[13]}',
+						  '{$contactData[14]}',
+						  '{$contactData[15]}',
+						  '{$contactData[16]}',
+						  '{$contactData[17]}',
+						  '{$contactData[18]}',
+						  '{$contactData[19]}',
+						  '{$contactData[20]}',
+						  '{$contactData[21]}',
+						  '{$contactData[22]}',
+						  '{$contactData[23]}'
 						   )
 
 						 "); 

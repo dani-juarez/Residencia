@@ -85,49 +85,90 @@ if (isset($_SESSION["usuario"])) {
 </script>
 
 	<div class="contenedor">
-		<h2>MODULO PTA TECNM</h2>
+		<h2>MODULO PDI TECNM</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
 				<input type="text" name="buscar" placeholder="Buscar por Area Responsable" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
 				<a href="insertpta.php" class="btn btn__nuevo">Nuevo PDI</a>
+
 			</form>
 		</div>
+
 		<table>
 			<tr class="head">
-				<td>Eje Estratégico/Eje Transversal (ET)</td>
+				<td>Eje Estratégico</td>
 				<td>Objetivo</td>
-				<td>N° Línea de Acción</td>
 				<td>Línea de Acción</td>
-				<td>N° Proyecto</td>
 				<td>Proyecto</td>
+				<td>N° Indicador</td>
 				<td>Indicador</td>
 				<td>Unidad de Medida</td>
-				<td>N° Acción</td>
-				<td>Acción Comprometida</td>
-				<td>Meta</td>
-				<td>Indicador Interno (ITs)</td>
-				<td>Medio de Verificación</td>
-				<td>Área Responsable</td>
+				<td>Metodo de Calculo</td>
+				<td>Numerador</td>
+				<td>Denominador (Solo colocarlo para porcentajes)</td>
+				<td>Area Responsable</td>
+				<td colspan="5">Capitulos Autorizados</td>
+				<td colspan="8">Estructura Programatica Presupuestal</td>
 				<td colspan="2">Acción</td>
 			</tr>
+
+			<tr class="head">
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+                <td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1000</td>
+				<td>2000</td>
+				<td>3000</td>
+				<td>4000</td>
+				<td>5000</td>
+				<td>FFPSR</td>
+				<td>AI</td>
+				<td>PP</td>
+				<td>EJE</td>
+				<td>OBJETIVO</td>
+				<td>LA</td>
+				<td>PROYECTO</td>
+				<td>N° INDICADOR</td>
+				<td></td>
+				<td></td>
+			</tr>
+
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['eje']; ?></td>
 					<td><?php echo $fila['objetivo']; ?></td>
-					<td><?php echo $fila['numero_linea_accion']; ?></td>
 					<td><?php echo $fila['linea_accion']; ?></td>
-					<td><?php echo $fila['numero_proyecto']; ?></td>
 					<td><?php echo $fila['proyecto']; ?></td>
+					<td><?php echo $fila['numero_indicador']; ?></td>
 					<td><?php echo $fila['indicador']; ?></td>
 					<td><?php echo $fila['unidad_medida']; ?></td>
-					<td><?php echo $fila['numero_accion']; ?></td>
-					<td><?php echo $fila['accion_comprometida']; ?></td>
-					<td><?php echo $fila['meta']; ?></td>
-					<td><?php echo $fila['indicador_interno']; ?></td>
-					<td><?php echo $fila['medio_verificacion']; ?></td>
+					<td><?php echo $fila['metodo_calculo']; ?></td>
+					<td><?php echo $fila['numerador']; ?></td>
+					<td><?php echo $fila['denominador']; ?></td>
 					<td><?php echo $fila['area_responsable']; ?></td>
+					<td><?php echo $fila['mil']; ?></td>
+					<td><?php echo $fila['dosmil']; ?></td>
+					<td><?php echo $fila['tresmil']; ?></td>
+					<td><?php echo $fila['cuatromil']; ?></td>
+					<td><?php echo $fila['cincomil']; ?></td>
+					<td><?php echo $fila['ffpsr']; ?></td>
+					<td><?php echo $fila['ai']; ?></td>
+					<td><?php echo $fila['pp']; ?></td>
+					<td><?php echo $fila['eje_estructura']; ?></td>
+					<td><?php echo $fila['objetivo_estructura']; ?></td>
+					<td><?php echo $fila['la']; ?></td>
+					<td><?php echo $fila['proyecto_estructura']; ?></td>
+					<td><?php echo $fila['numero_indicador_estructura']; ?></td>
 					<td><a href="updatepta.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
 					<td><a href="deletepta.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>

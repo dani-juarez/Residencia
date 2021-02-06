@@ -56,51 +56,90 @@ if (isset($_SESSION["usuario"])) {
 </head>
 <body>
 	<div class="contenedor">
-		<center><h3>MODULO PTA TECNM</h3></center>
+		<center><h3>MODULO PDI TECNM</h3></center>
 
 		<table>
-			<tr class="head">
-				<td>Eje Estratégico/Eje Transversal (ET)</td>
+		<tr class="head">
+				<td>Eje Estratégico</td>
 				<td>Objetivo</td>
-				<td>N° Línea de Acción</td>
 				<td>Línea de Acción</td>
-				<td>N° Proyecto</td>
 				<td>Proyecto</td>
+				<td>N° Indicador</td>
 				<td>Indicador</td>
 				<td>Unidad de Medida</td>
-				<td>N° Acción</td>
-				<td>Acción Comprometida</td>
-				<td>Meta</td>
-				<td>Indicador Interno (ITs)</td>
-				<td>Medio de Verificación</td>
-				<td>Área Responsable</td> 
+				<td>Metodo de Calculo</td>
+				<td>Numerador</td>
+				<td>Denominador (Solo colocarlo para porcentajes)</td>
+				<td>Area Responsable</td>
+				<td colspan="5">Capitulos Autorizados</td>
+				<td colspan="8">Estructura Programatica Presupuestal</td>
+				<td colspan="2">Acción</td>
+			</tr>
+
+			<tr class="head">
+				<td></td>
+				<td></td>
+				<td></td>
+                <td></td>
+                <td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1000</td>
+				<td>2000</td>
+				<td>3000</td>
+				<td>4000</td>
+				<td>5000</td>
+				<td>FFPSR</td>
+				<td>AI</td>
+				<td>PP</td>
+				<td>EJE</td>
+				<td>OBJETIVO</td>
+				<td>LA</td>
+				<td>PROYECTO</td>
+				<td>N° INDICADOR</td>
+				<td></td>
+				<td></td>
 			</tr>
 
             <?php
             
-                  $query="SELECT PDI.eje, PDI.objetivo, PDI.numero_linea_accion, PDi.linea_accion, PDI.numero_proyecto, PDI.proyecto, PDI.indicador, PDI.unidad_medida, PDI.numero_accion, PDI.accion_comprometida, PDI.meta, PDI.indicador_interno, PDI.medio_verificacion, PDI.area_responsable,
-				                 US.nombre
-                             FROM pdi PDI
-                             INNER JOIN usuarios US ON US.nombre = PDI.area_responsable ";
-                 $consulta=$con->query($query);
-				 while ($fila=$consulta->fetch(PDO::FETCH_ASSOC))
+            $query="SELECT  PDI.eje, PDI.objetivo, PDI.linea_accion, PDi.proyecto, PDI.numero_indicador, PDI.indicador, PDI.unidad_medida, PDI.metodo_calculo, PDI.numerador, PDI.denominador, PDI.area_responsable, PDI.1000, PDI.2000, PDI.3000, PDI.4000, PDI.5000, PDI.ffpsr, PDI.ai, PDI.pp, PDI.eje_estructura, PDI.objetivo_estructura, PDI.la, PDI.proyecto_estructura, PDI.numero_indicador_estructura,
+				            US.nombre
+                            FROM pdi PDI
+                            INNER JOIN usuarios US ON US.nombre = PDI.area_responsable ";
+            $consulta=$con->query($query);
+			while ($fila=$consulta->fetch(PDO::FETCH_ASSOC))
                  {
                     echo'
                          <tr>
                          <td>'.$fila['eje'].'</td>
                          <td>'.$fila['objetivo'].'</td>
-                         <td>'.$fila['numero_linea_accion'].'</td>
                          <td>'.$fila['linea_accion'].'</td>
-                         <td>'.$fila['numero_proyecto'].'</td>
                          <td>'.$fila['proyecto'].'</td>
+                         <td>'.$fila['numero_indicador'].'</td>
                          <td>'.$fila['indicador'].'</td>
                          <td>'.$fila['unidad_medida'].'</td>
-                         <td>'.$fila['numero_accion'].'</td>
-                         <td>'.$fila['accion_comprometida'].'</td>
-                         <td>'.$fila['meta'].'</td>
-                         <td>'.$fila['indicador_interno'].'</td>
-                         <td>'.$fila['medio_verificacion'].'</td>
+                         <td>'.$fila['metodo_calculo'].'</td>
+                         <td>'.$fila['numerador'].'</td>
+                         <td>'.$fila['denominador'].'</td>
                          <td>'.$fila['area_responsable'].'</td>
+                         <td>'.$fila['1000'].'</td>
+                         <td>'.$fila['2000'].'</td>
+						 <td>'.$fila['3000'].'</td>
+						 <td>'.$fila['4000'].'</td>
+						 <td>'.$fila['5000'].'</td>
+						 <td>'.$fila['ffpsr'].'</td>
+						 <td>'.$fila['ai'].'</td>
+						 <td>'.$fila['pp'].'</td>
+						 <td>'.$fila['eje_estructura'].'</td>
+						 <td>'.$fila['objetivo_estructura'].'</td>
+						 <td>'.$fila['la'].'</td>
+						 <td>'.$fila['proyecto_estructura'].'</td>
+						 <td>'.$fila['numero_indicador_estructura'].'</td>
                          </tr>
                          ';
                  }

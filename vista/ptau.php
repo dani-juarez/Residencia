@@ -68,7 +68,7 @@ if (isset($_SESSION["usuario"])) {
 				<td>Indicador</td>
 				<td>Unidad de Medida</td>
 				<td>Metodo de Calculo</td>
-				<td>Numerador</td>
+				<td>Númerador</td>
 				<td>Denominador (Solo colocarlo para porcentajes)</td>
 				<td>Area Responsable</td>
 				<td colspan="5">Capitulos Autorizados</td>
